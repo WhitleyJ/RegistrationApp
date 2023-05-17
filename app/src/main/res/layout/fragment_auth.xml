@@ -1,0 +1,62 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/img_2"
+        android:layout_marginBottom="30dp"/>
+
+    <LinearLayout
+        android:layout_gravity = "bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation = "vertical">
+
+        <EditText
+            android:id="@+id/phoneNumberEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="Номер телефона"
+            android:inputType="phone"
+            android:maxLines="1" />
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation = "horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/codeFromSms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Code"
+                android:visibility ="invisible"
+                android:maxLines="1"
+                android:maxLength="6"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerButton"
+            style="@style/TextAppearance.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:cornerRadius="15dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:text="Получить код"/>
+    </LinearLayout>
+</FrameLayout>
